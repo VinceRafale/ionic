@@ -1,0 +1,30 @@
+<ion-side-menus enable-menu-with-back-views="true">
+
+  <ion-side-menu-content style="background-color: #FFFFFF !important">
+    <ion-nav-bar class="bar-white">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left" style="background-color: #FFFFFF !important">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="mainContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" style="background-color: #FFFFFF !important">
+    <header class="bar bar-header bar-light">
+      <h1 class="title">Details</h1>
+    </header>
+    <ion-content class="has-header" style="background-color: #FFFFFF !important">
+      <ion-list>
+       <ion-item nav-clear menu-close ui-sref="sport" class="item-icon-left"><i class="icon ion-ios-basketball positive"></i>Leagues</ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.teams" class="item-icon-left"><i class="icon ion-person-stalker positive"></i>Teams</ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.standings" class="item-icon-left"><i class="icon ion-stats-bars positive"></i>Standings</ion-item>
+         <ion-item nav-clear menu-close ui-sref="app.myteams" class="item-icon-left"><i class="icon ion-star positive"></i>My Teams</ion-item>
+        <ion-item nav-clear menu-close ui-sref="app.locations" class="item-icon-left"><i class="icon ion-location positive"></i>Locations</ion-item>
+      </ion-list>
+  </ion-side-menu>
+
+</ion-side-menus>

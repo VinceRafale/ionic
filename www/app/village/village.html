@@ -1,0 +1,79 @@
+<ion-view view-title="Village">
+   
+<ion-nav-bar class="bar-white">
+    <ion-nav-buttons side="left">
+   <a class="button button-clear ion-chevron-left" ui-sref="challenge" > </a>
+</ion-nav-buttons>
+</ion-nav-bar>
+        <!--
+         | http://stackoverflow.com/questions/27239735/ionic-framwork-gridlayout-with-multiple-rows-and-column-on-which-buttons-placed
+         | http://stackoverflow.com/questions/23779773/angularjs-loops-and-formatting/23780288#23780288
+         -->
+ <ion-content class="has-header" style="background-color: #FFFFFF !important">
+
+
+<div ng-repeat="e in vm.entries" ng-if="$index%2==0" class="row">
+
+            <div class="card col home">
+                <a class="item item-text-wrap" style="background-color: #FFFFFF !important" ui-sref="{{vm.entries[$index].path}}">
+                    <h1><i class="icon {{vm.entries[$index].icon}} custom-icon"></i></h1>
+                    <h4>{{vm.entries[$index].title}}</h4>
+                </a>
+            </div>
+
+            <div class="card col home">
+                <a class="item item-text-wrap custom-border" style="background-color: #FFFFFF !important" ui-sref="{{vm.entries[$index + 1].path}}">
+                    <h1><i class="icon {{vm.entries[$index + 1].icon}} custom-icon"></i></h1>
+                    <h4>{{vm.entries[$index + 1].title}}</h4>
+                </a>
+            </div>
+
+</div>
+
+
+  <div class="item item-divider" >
+    <h4><b>Did you know?</b></h4>
+  </div>
+
+<ion-slide-box>
+
+  <ion-slide>
+     <div class="item" style="background-color: #FFFFFF !important">
+       <a class="item item-avatar" style="background-color: #FFFFFF !important">
+      <img src="img/challenge-camerounais.png">
+       <h3><b>Football</b></h3>
+      <h4>Eight cities will be represented</h4>
+    </a>
+<div class="item item-body" style="background-color: #FFFFFF !important">    
+       <div class="text-center" style="background-color: #FFFFFF !important">
+           <div class="item item-image">
+        <img src="img/football.jpg">
+        </div>
+</div>
+    
+</div> 
+</div>
+
+</ion-slide>
+<ion-slide>
+     <div class="item" style="background-color: #FFFFFF !important">
+       <a class="item item-avatar" style="background-color: #FFFFFF !important">
+      <img src="img/challenge-camerounais.png">
+       <h3><b>Business Social Forum</b></h3>
+      <h4>The digital Africa</h4>
+    </a>
+    <div class="item item-body" style="background-color: #FFFFFF !important">    
+       <div class="text-center" style="background-color: #FFFFFF !important">
+           <div class="item item-image">
+        <img src="img/bsf.jpg">
+        </div>
+    </div>
+    
+    </div> 
+    </div>
+</ion-slide>
+</ion-slide-box>
+
+       
+    </ion-content>
+</ion-view>

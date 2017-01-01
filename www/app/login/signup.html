@@ -1,0 +1,60 @@
+<ion-modal-view>
+
+  <ion-header-bar class="bar bar-header">
+    <h1 class="title">Create New Account</h1>
+    <button class="button button-clear button-primary ion-android-close" ng-click="vm.modal.hide()"></button>
+  </ion-header-bar>
+    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;" >
+        
+        <form name="myRegistrationForm" novalidate>
+			   <div class="list">
+
+              <label class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;"  class="input-label">First Name</span>
+                <input name="firstName" ng-model="vm.user.firstName" type="text" placeholder="First Name" ng-minlength="4" required>
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;"  class="input-label">Last Name</span>
+                <input name="lastName" ng-model="vm.user.lastName" type="text" placeholder="Last Name" ng-minlength="4" required>
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;" class="input-label">Phone</span>
+                <input  name="phone" ng-model="vm.user.phone" type="tel" placeholder="Phone" ng-minlength="5" required>
+              </label>
+
+              <label class="item item-input item-floating-label">
+                  <span style="color: #9F9F9F;" class="input-label">Email</span>
+                  <input name="email" ng-model="vm.user.email" type="email" placeholder="Email" ng-minlength="5" required>
+              </label>
+
+              <label class="item item-input item-floating-label">
+                  <span style="color: #9F9F9F;" class="input-label">Password</span>
+                  <input name="password" ng-model="vm.user.password" type="password" placeholder="Password" ng-minlength="6" required>>
+              </label>
+
+
+      <div class="padding">
+      <button class="button button-positive button-block" ng-click="vm.signUp(vm.user)" ng-disabled="myRegistrationForm.$invalid">Sign Up</button>
+      <div class="error" ng-if="registrationErrorMessage" ng-bind="registrationErrorMessage">
+      </div>
+            <p ng-show="myRegistrationForm.email.$invalid && !myRegistrationForm.email.$pristine" style="color: red;">* Email address is not valid</p>
+            <p ng-show="myRegistrationForm.email.$error.minlength" style="color: red;">* Email must be longer than 5 characters</p>
+           
+            <p ng-show="myRegistrationForm.password.$error.minlength" style="color: red;">* Password must be longer than 6 characters</p>
+      </div>
+      <br><br><br>
+      <button class="button button-stable button-block" ui-sref="login" ng-show="registrationErrorMessage">
+        I have an account
+      </button>
+    </div>
+    </div>
+    </form>
+
+       
+    </ion-content>
+</ion-modal-view>
+
+
+ 

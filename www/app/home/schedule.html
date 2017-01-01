@@ -1,0 +1,24 @@
+<ion-view title="" ng-controller="TabsCtrl as vm">
+
+<ion-content scroll="true">
+    <div class="item item-image">
+    <img src="img/schlossplatz-stuttgart.jpeg">
+      <div class="item item-text-wrap">
+        <h1>Welcome </h1>
+        to challenge camerounais in Stuttgart, the 25th edition.
+      </div>
+</div>
+          <!-- You can mix styles in a button bar if you want. -->
+<div class="bar subheader">
+ <div class="button-bar">
+   <a class="button icon-left ion-log-in"  ng-class="{'button-positive' : isActive('Before')}" ng-click="setActive('Before')" ui-sref="home.schedule.pre" ui-sref-active="home.schedule.pre">Going</a>
+   <a class="button" ng-class="{'button-positive' : isActive('During')}" ng-click="setActive('During')" ui-sref="home.schedule.at">Challenge</a>
+   <a class="button icon-left ion-log-out" ng-class="{'button-positive' : isActive('After')}" ng-click="setActive('After')" ui-sref="home.schedule.post">Leaving</a>
+ </div>
+</div>
+<ion-nav-view name = "schedule-sub" has-header="true"></ion-nav-view>
+
+</ion-content>
+
+
+</ion-view>

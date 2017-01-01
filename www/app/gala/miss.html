@@ -1,0 +1,29 @@
+<ion-view view-title="Female contestants">
+  <ion-nav-buttons side="right">
+    <button class="button button-clear icon ion-refresh" ng-click="vm.refresh()"></button>
+  </ion-nav-buttons>
+  <ion-pane style="background-color: #FFFFFF !important">
+    <td-cards>
+      <td-card ng-repeat="item in vm.items" ng-if="vm.items.length > 0"
+        on-destroy="vm.cardDestroyed($index)">
+            <div class="card">
+            <div class="card-header padding"> {{item.title}}</div>
+              <div class="card-body">
+                <div class="image">
+                  <img ng-src="{{item.image}}">
+                </div>
+
+              </div>
+               <div class="card-footer">
+                  <button class="button button-clear ion-social-facebook-outline facebook-color" ng-click="goAway()"></button>
+                  <button class="button button-clear ion-social-twitter-outline twitter-color" ng-click="goAway()"></button>
+                </div>
+          </div>
+
+      </td-card>
+    </td-cards>
+    <h3 ng-if="vm.items.length === 0" class="text-center" style="margin-top: 100px;">
+      There are no items to display
+    </h3>
+  </ion-pane>
+</ion-view>

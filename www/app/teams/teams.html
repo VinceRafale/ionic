@@ -1,0 +1,15 @@
+<ion-view title="Teams" ng-controller="TeamsCtrl as vm">
+  <ion-content class="has-header" >
+    <ion-refresher pulling-text="Pull to refresh..." on-refresh="vm.loadList(true)"></ion-refresher>
+    <div class="list " style="background-color: #FFFFFF !important">
+        <div ng-repeat="division in vm.teams">
+            <div align="center" class="item item-divider item-stable" style="background-color: #FFFFFF !important"><font size="2", color="#1f7f5c">{{division.divisionName}}</font></div>
+
+            <a href="#/app/teams/{{team.id}}" class="item item-icon-right" ng-repeat="team in division.divisionTeams" style="background-color: #FFFFFF !important">
+                {{team.name}}
+                <i class="icon ion-chevron-right icon-accessory" style="color:#1f7f5c"></i>
+            </a>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

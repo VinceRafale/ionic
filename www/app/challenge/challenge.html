@@ -1,0 +1,103 @@
+ <ion-view view-title="Events">
+ 
+<ion-nav-bar class="bar-white" >
+    <ion-nav-buttons side="left">
+   <a class="button button-clear ion-chevron-left" ui-sref="home.schedule" ></a>
+</ion-nav-buttons>
+</ion-nav-bar>
+
+ <ion-content  class="has-header"  class="padding has-header" style="background-color: #FFFFFF !important">
+
+<div class="list card" style="background-color: #FFFFFF !important">
+
+     <div class="item item-text-wrap" style="background-color: #FFFFFF !important">
+      <h2 style="color: #1f7f5c !important">VILLAGE</h2>
+      <p>3. - 4. JUNE 2017</p>
+      <p>Meet friends, enjoy food, music,sport & attend the Business social forum</p>
+
+   <div class="item item-image">
+    <ion-slide-box style="background-color: #FFFFFF !important">
+
+  <ion-slide style="background-color: #FFFFFF !important" ui-sref="sport">
+     <div class="item" style="background-color: #FFFFFF !important">
+       <h3> Sport</h3>
+       <div class="item item-image">
+        <img src="img/football.jpg">    
+</div> 
+</div>
+</ion-slide>
+
+<ion-slide style="background-color: #FFFFFF !important"  ui-sref="bsf.calendar">
+     <div class="item" style="background-color: #FFFFFF !important" >
+       <h3>Business Social Forum</h3>
+        <div class="item item-image">
+        <img src="img/bsf.jpg">
+        </div>
+    </div>
+</ion-slide>
+
+<ion-slide style="background-color: #FFFFFF !important" ui-sref="kids">
+     <div class="item" style="background-color: #FFFFFF !important" >
+       <h3>Kids</h3>
+           <div class="item item-image">
+        <img src="img/kids.jpg">
+    </div> 
+    </div>
+</ion-slide>
+
+</ion-slide-box>
+
+<div class="item tabs tabs-secondary tabs-icon-left " style="background-color: #FFFFFF !important">
+      <a class="tab-item" ng-click="vm.getVillageDirections()">
+        <i class="icon ion-ios-location-outline custom-icon"></i> Location 
+      </a>
+      <a class="tab-item" ng-click="myAcSheet()">
+        <i class="icon ion-ios-upload-outline custom-icon"></i> Share
+      </a>
+    </div> 
+  </div>
+
+    </div>
+  
+  <div class="item item-text-wrap" style="background-color: #FFFFFF !important" >
+      <h2 style="color: #1f7f5c !important">DISCO NIGHT</h2>
+      <p>3. JUNE 2017</p>
+      <p>Join us at the disco night and dance with us all night all</p>
+
+    <div class="item item-image" >
+    <img src="img/disco-night.jpg" ui-sref="disco">
+        <div class="item tabs tabs-secondary tabs-icon-left" style="background-color: #FFFFFF !important">
+      <a class="tab-item" ng-click="vm.getDiscoDirections()">
+        <i class="icon ion-ios-location-outline custom-icon"></i>Location 
+      </a>
+      <a class="tab-item" ng-click="myAcSheet()">
+        <i class="icon ion-ios-upload-outline custom-icon"></i>Share 
+      </a>
+    </div> 
+    </div>
+    </div> 
+
+<div class="item item-text-wrap" style="background-color: #FFFFFF !important" >
+      <h2 style="color: #1f7f5c !important">GALA NIGHT</h2>
+      <p>4. JUNE 2017</p>
+      <p>The most glamourious event of the year! </p>
+    <div class="item item-image" >
+    <img src="img/gala.jpg" ui-sref="gala.schedule">
+    <div class="item tabs tabs-secondary tabs-icon-left" style="background-color: #FFFFFF !important">
+      <a class="tab-item" ng-click="vm.getGalaDirections()">
+        <i class="icon ion-ios-location-outline custom-icon"></i>Location 
+      </a>
+      <a class="tab-item" ng-click="myAcSheet()">
+        <i class="icon ion-ios-upload-outline custom-icon"></i>Share 
+      </a>
+    </div>  
+  </div> 
+</div>       
+
+
+</div>
+
+</ion-content> 
+</ion-view>
+
+

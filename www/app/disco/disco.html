@@ -1,0 +1,70 @@
+ <ion-view >
+
+  <!-- regular ionic header bar -->
+  <ion-header-bar class="bar-white">
+    <div class="buttons">
+      <a class="button button-icon ion-chevron-left" ui-sref="challenge"></a>
+    </div>
+    <h1 class="title">Disco Night</h1>
+    <div class="buttons">
+    <a class="button button-icon ion-ios-cart-outline" ui-sref="shopping-cart" ><span ng-if="!vm.currency" class="badge badge-assertive header-badge">{{vm.getCart()}}</span></a>
+    </div>
+  </ion-header-bar>
+
+   <ion-content style="background-color: #FFFFFF !important" >
+
+    <img class="cover-img" src="img/disco-night.jpg"/>
+
+    <div class="row">
+      <div class="col">
+        <img class="profile-img" src="img/club.jpg"/>
+      </div>
+      <div class="col col-75" > <b >03. June 2017, 10 PM</b>
+         <p>Renowned DJ's will provide the right atmosphere.</p>
+        <br />
+      </div>
+    </div>
+
+
+    <hr />
+    <p class="description padding-left padding-right">
+     Discover the best sound of the African (ndombolo, Coupé decalé, Bikutsi & makossa), world, Dancehall, House and pop music .  Two dance floors and exclusive VIP area . Go ahead and book your packages!</p>
+<div ng-repeat="p in vm.items" ng-if="$index % 2 == 0" class="row">
+      <div class="card col" ng-click="vm.showItemDetails(vm.items[$index].id)">
+        <div class="item">
+          <h2>{{vm.items[$index].title}}</h2>
+        </div>
+
+        <div class="item item-image">
+          <img ng-src="{{vm.items[$index].thumb}}">
+        </div>
+
+        <a class="item">
+          <div class="align-right">
+            {{vm.items[$index].price | currency : vm.items[$index].currency : 2 }}
+          </div>
+        </a>
+      </div>
+
+      <div class="card col" ng-click="vm.showItemDetails(vm.items[$index + 1].id)">
+        <div class="item">
+          <h2>{{vm.items[$index + 1].title}}</h2>
+        </div>
+
+        <div class="item item-image">
+          <img ng-src="{{vm.items[$index + 1].thumb}}">
+        </div>
+
+        <a class="item">
+          <div class="align-right">
+            {{vm.items[$index + 1].price | currency : vm.items[$index + 1].currency : 2 }}
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </ion-content>
+  
+</ion-view>
+
+

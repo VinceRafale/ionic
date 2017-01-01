@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
+
+    <style>
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+    </style>
+
+
+    <link rel="stylesheet" href="lib/ionic/release/css/ionic.css">
+    <link href="styles/main.css" rel="stylesheet">
+
+
+
+     <!-- libraries -->
+    <script src="lib/ionic/release/js/ionic.bundle.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="lib/lodash/dist/lodash.min.js"></script>
+    <script src="lib/ion-cover-header/ion-cover-header.js"></script>
+    <script src="lib/angular-cache/dist/angular-cache.js"></script>
+    <script src="lib/showdown/compressed/showdown.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="lib/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="lib/ionic-ratings/dist/ionic-ratings.min.js"></script>
+    <script src="cordova.js"></script>
+    <script src="lib/ionic.cloud.min.js"></script>
+    <script src="lib/ng-cordova-oauth/dist/ng-cordova-oauth.js"></script>
+    <script src="lib/angular-local-storage/dist/angular-local-storage.min.js"></script>
+    <script src="lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js"></script>
+    <script src="lib/ionic-timepicker/dist/ionic-timepicker.bundle.min.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+
+    <!-- your app's js -->
+    <script src="app/app.js"></script>
+    <script src="js/controllers.js"></script>
+
+    <!-- Common directives -->
+    <script src="app/common/directives/gmaps/gmaps.directive.js"></script>
+    <script src="app/common/services/extenal-apps.service.js"></script>
+    <script src="app/common/services/html-to-plain-text.service.js"></script>
+    <script src="app/directives/markdown.js"></script>
+    
+
+    <!-- services -->
+    <script src="app/home/home-data.service.js"></script>
+    <script src="app/home/menu-items.service.js"></script>
+    <script src="app/gala/gala-catalogue.service.js"></script>
+    <script src="app/facebook/facebook-auth.service.js"></script>
+    <script src="app/facebook/facebook.service.js"></script>
+    <script src="app/services/challengeApi.js"></script>
+    <script src="app/services/myTeamsService.js"></script>
+    <script src="app/services/user-service.js"></script>
+    <script src="app/feedback/camera.service.js"></script>
+    <script src="app/feedback/feedback.service.js"></script>
+    <script src="app/sponsor/sponsor-data.service.js"></script>
+    <script src="app/position/position.service.js"></script>
+    <script src="app/challenge/challenge-data.service.js"></script>
+    <script src="app/shopping-cart/shopping-cart.service.js"></script>
+    <script src="app/disco/disco-catalogue.service.js"></script>
+    <script src="app/disco/disco-cart.service.js"></script>
+    <script src="app/lo-storage/edit-lo-storage-item.service.js"></script>
+    <script src="app/lo-storage/lo-storage.service.js"></script>
+    <script src="app/gala/swipeable-cards/swipeable-cards.service.js"></script>
+    <script src="app/gala/tinder-cards/tinder-cards.service.js"></script>
+    <script src="app/map/map.service.js"></script>
+    <script src="app/kids/kids-data.service.js"></script>
+    <script src="app/kids/kids-notification.service.js"></script>
+    <script src="app/youtube/youtube.service.js"></script>
+    <script src="app/oauth/oauth.service.js"></script>  
+    <script src="app/oauth/oauth-providers/oauth-twitter.service.js"></script> 
+    <script src="app/oauth/oauth-providers/oauth-google.service.js"></script> 
+    <script src="app/oauth/oauth-providers/oauth-facebook.service.js"></script> 
+    <script src="app/infrastructure/services/firebase-db.service.js"></script> 
+  
+
+    <!-- Controllers --> 
+    <script src="app/home/homeController.js"></script>
+    <script src="app/gala/gala-controller.js"></script>
+    <script src="app/gala/tickets-controller.js"></script>   
+    <script src="app/tickets/tickets.controller.js"></script>  
+    <script src="app/tickets/tickets.service.js"></script> 
+    <script src="app/gala/gala-catalogue-item.controller.js"></script>
+    <script src="app/facebook/login/facebook-login.controller.js"></script> 
+    <script src="app/login/loginController.js"></script>
+    <script src="app/login/passwordResetCtrl.js"></script>
+    <script src="app/teams/team-detail-ctrl.js"></script>
+    <script src="app/teams/my-teams-ctrl.js"></script>
+    <script src="app/locations/locations-ctrl.js"></script>
+    <script src="app/teams/teams-ctrl.js"></script>
+    <script src="app/standings/standings-ctrl.js"></script>
+    <script src="app/game/game-ctrl.js"></script>
+    <script src="app/locations/location-map-ctrl.js"></script>
+    <script src="app/rules/rules-ctrl.js"></script>
+    <script src="app/locations/location-schedule-ctrl.js"></script>   
+    <script src="app/services/SessionCtrl.js"></script>
+    <script src="app/products/product.controller.js"></script>
+    <script src="app/feedback/feedback-controller.js"></script>
+    <script src="app/sponsor/sponsorController.js"></script>
+    <script src="app/position/position.controller.js"></script>
+    <script src="app/challenge/challengeController.js"></script>
+    <script src="app/bsf/bsf-ctrl.js"></script>
+    <script src="app/shopping-cart/my-cart/my-cart.controller.js"></script>
+    <script src="app/shopping-cart/order-processor.js"></script>
+    <script src="app/disco/restaurant-catalogue-item.controller.js"></script>
+    <script src="app/disco/disco-cart/restaurant-cart.controller.js"></script>
+    <script src="app/lo-storage/lo-storage.controller.js"></script>
+    <script src="app/disco/disco.controller.js"></script>
+    <script src="app/newsletter/newsletter.controller.js"></script>
+    <script src="app/village/village-controller.js"></script>
+    <script src="app/sport/leagues-ctrl.js"></script>
+    <script src="app/youtube/video.controller.js"></script>
+    <script src="app/youtube/videos.controller.js"></script>
+    <script src="app/youtube/youtube-embed-url.filter.js"></script>
+    <script src="app/configuration.js"></script>
+    <script src="app/kids/kidsController.js"></script>
+    <script src="app/kids/registrationController.js"></script>
+    <script src="app/map/map.controller.js"></script>
+    <script src="app/gala/tinder-cards/tinder-cards.controller.js"></script>
+    <script src="lib/ionic-ion-tinder-cards/ionic.tdcards.js"></script>
+    <script src="lib/ionic-ion-swipe-cards/ionic.swipecards.js"></script>
+    <script src="app/gala/swipeable-cards/swipeable-cards.controller.js"></script>
+  </head>
+
+  <!-- linking the HTML to angular JS -->
+<body ng-app="starter" ng-cloak="">
+<ion-nav-view></ion-nav-view>
+  </body>
+</html>

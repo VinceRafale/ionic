@@ -1,0 +1,18 @@
+<ion-view title="Locations" ng-controller="LocationsCtrl as vm">
+  <ion-content class="has-header" style="background-color: #FFFFFF !important">
+    <div class="list">
+        <div class="item item-button-right" ng-repeat="location in vm.locations" style="background-color: #FFFFFF !important">
+            {{location.name}}
+
+            <div class="buttons">
+                <a class="button button-light" ng-click="vm.openMapLocation({{location.id}})" style="background-color: #FFFFFF !important">
+                    <i class="icon ion-location positive"></i>
+                </a>
+                <a class="button button-light" ng-href="#/app/location-schedule/{{location.id}}" style="background-color: #FFFFFF !important">
+                    <i class="icon ion-calendar positive"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

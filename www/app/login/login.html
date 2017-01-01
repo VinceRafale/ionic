@@ -1,0 +1,51 @@
+<ion-view style="" class=" ">
+
+<ion-nav-bar class="bar-stable">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+    <ion-content class="has-header" padding="true" style="background: url(img/bg1.jpg) center; background-size: cover;">
+
+        <form name="myForm" novalidate>
+            <ion-list class=" ">
+
+                <div class="app-icon"></div>
+
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" style="color: #9F9F9F;" required>Email</span>
+                    <input name="email" ng-model="vm.user.email"" style="color: black;" type="email" placeholder="Email" ng-minlength="5" required>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <span class="input-label" style="color: #9F9F9F;" >Password</span>
+                    <input name="password" ng-model="vm.user.password" style="color: black;" type="password" placeholder="Password" ng-minlength="6" required>
+                </label>
+
+            </ion-list>
+
+            <div class="padding">
+      <button ng-click="vm.signIn()" class=" button button-positive  button-block  icon-left ion-ios-email-outline " ng-disabled="myForm.$invalid">LOGIN WITH EMAIL</button>
+      <div class="error" ng-if="errorMessage" ng-bind="errorMessage" style="color: red;">
+      <p ng-show="myForm.username.$error.required" style="color: red;">* Email is required</p>
+            <p ng-show="myForm.email.$invalid && !myForm.email.$pristine" style="color: red;">* Email address is not valid</p>
+            <p ng-show="myForm.email.$error.minlength" style="color: red;">* Email must be longer than 5 characters</p>
+            <p ng-show="myForm.password.$error.required" style="color: red;">* Password is required</p>
+            <p ng-show="myForm.password.$error.minlength" style="color: red;">* Password must be longer than 6 characters</p>
+      </div>
+
+            <div style="height: 40px;" class="spacer"></div>
+            <button ng-click="vm.facebookLogin()" class=" button ion-social-facebook  button-block icon-left ion-social-facebook "  id="signup-button4">LOGIN WITH FACEBOOK</button>
+
+
+        </form>
+
+        <a class=" button button-stable button-block button-clear icon-left ion-ios-email-outline " ui-sref="password-reset">FORGOT PASSWORD</a>
+
+       <div ng-if="!vm.loggedUser.isSignedIn" class="padding" style="text-align:center">
+                <button ng-click="vm.modal.show()"
+                    class="button button-small button-outline icon-left ion-person-add button-positive">
+                    Create New Account
+                </button>
+            </div>
+
+    </ion-content>
+</ion-view>

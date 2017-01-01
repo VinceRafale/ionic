@@ -1,0 +1,73 @@
+<!-- add the directive ionion-cover-header to your ion-pane or ion-view, the value passed is the height in pixels when the header bar should be fully opaque-->
+<ion-view cache-view="false" class="playstore" ion-cover-header="120">
+
+  <!-- regular ionic header bar -->
+  <ion-header-bar class="bar-balanced playstore-header">
+    <div class="buttons">
+      <a class="button button-icon ion-arrow-left-c white-icon" ui-sref="challenge"></a>
+    </div>
+    <h1 class="title white-icon"></h1>
+    <div class="buttons">
+    <a class="button button-icon ion-ios-cart-outline" ui-sref="shopping-cart" ><span class="badge badge-assertive notifications-badge">{{vm.getCart()}}</span></a>
+     <a class="button button-icon icon ion-plus-circled" ui-sref="registration"></a>
+    </div>
+  </ion-header-bar>
+
+
+   <ion-content style="background-color: #FFFFFF !important">
+
+    <img class="cover-img" src="img/kids.jpg"/>
+
+        <p class="whatsnew" style="background-color: #FFFFFF !important">
+      <b> <font size="2" color="#1f7f5c">CHALLENGE KIDS</b><br />
+      We take care of your kids at the village. Following activities are provided:
+      <Br>
+      - trampolines<br />
+      - children's play area<br />
+      - puppet theater<br />
+      - And more ...<br />
+
+<br> <font size="2" color="grey">The price to be paid depends on the number of registered children (3 years and older): 1 child: 10 € / day, 2 children: 18 € / day, 3 children: 25 € / day.</font><br>
+    </p>
+
+     <div  ng-show="vm.items.length === 0" style="background-color: #FFFFFF !important">
+      <div class="item item-body center-align" style="background-color: #FFFFFF !important">
+        <h4 class="dark">To register your kid, please click the <i class="ion-plus-circled dark"></i>
+        icon in the top right corner.</h4>
+      </div>
+    </div>
+
+ <ion-list can-swipe="true" style="background-color: #FFFFFF !important">
+      <ion-item ng-repeat="item in vm.items"  style="background-color: #FFFFFF !important">
+        <div class="row" style="background-color: #FFFFFF !important">
+          <div class="col col-20" style="display: flex;justify-content: flex-end;align-items: center;background-color: #FFFFFF !important">
+            <button class="button button-clear" style="font-size:2rem !important" ng-click="task.setStatus(item)">
+              <i class="ion ion-ios-body" ng-class="{ 'balanced' : item.complete }"></i>
+            </button>
+          </div>
+          <div class="col col-80" on-tap="task.setActive(item._id)" style="background-color: #FFFFFF !important">
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.body }}</p>
+            <label class="dark" ng-show="item.firstDay  !== undefined" >
+              {{ item.firstDay | date : "short"}}
+            </label>
+            <label class="dark" ng-show="item.secondDay  !== undefined" >
+              and {{ item.secondDay | date : "short"}}
+            </label>
+        </div>
+      </div>
+      <ion-option-button class="button-energized ion-edit"
+      ui-sref="edit({ id : item._id })"></ion-option-button>
+      <ion-option-button class="button-assertive ion-trash-a"
+      ng-click="vm.deleteItem(item)"></ion-option-button>
+      </ion-item>
+    </ion-list>
+
+  <div  style="background-color: #FFFFFF !important">
+      <button class="button button-block button-positive" ng-click="vm.addToCart()">
+        <i class="icon ion-ios-cart"></i> Add to cart
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

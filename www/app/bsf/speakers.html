@@ -1,0 +1,26 @@
+<ion-view >
+<div class="bar bar-subheader 
+  item-input-inset bar-light" style="background-color: #FFFFFF !important">
+  <label class="item-input-wrapper">
+    <i class="icon ion-search placeholder-icon"></i>
+    <input type="search" ng-model="query" placeholder="Search">
+  </label>
+</div>
+<ion-content class="has-header">
+  <ion-list >
+    <ion-item  ng-class="{'star': item.star}" 
+    ng-repeat='item in artists | filter: query'
+    class="has-header item-thumbnail-left item-icon-right
+      item-text-wrap">
+      <img ng-src="img/{{item.shortname}}_tn.jpg"
+        alt="{{ item.name }} Photo">
+      <h2>{{item.name}}</h2>
+      <h3>{{item.reknown}}</h3>
+      <p>{{item.bio | limitTo: 100}}
+      {{ item.bio.length > 150 ? '&hellip;' : '' }}</p>
+      <ion-option-button class="option-linkedin-color" ng-click="toggleStar(item)"><i class="icon ion-social-linkedin-outline"></i></ion-option-button>
+      <ion-option-button class="option-twitter-color" ng-click="toggleStar(item)"><i class="icon ion-social-twitter-outline"></i></ion-option-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+</ion-view>

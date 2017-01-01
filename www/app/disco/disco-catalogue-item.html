@@ -1,0 +1,37 @@
+<ion-view view-title="{{ vm.item.title }}">
+
+   <ion-nav-bar align-title="center" class="bar-light">
+  <ion-nav-back-button>
+  </ion-nav-back-button>
+</ion-nav-bar>
+
+  <!-- regular ionic header bar -->
+  <!-- regular ionic header bar -->
+
+   <ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-ios-cart-outline" ui-sref="shopping-cart"><span ng-if="!vm.currency" class="badge badge-assertive notifications-badge">{{vm.getCart()}}</span></button>
+    </ion-nav-buttons>
+
+
+
+
+	<ion-content has-header="true">
+
+		<ion-slide-box>
+			<ion-slide ng-repeat="pic in vm.item.pictures">
+				<div class="box blue"><img ng-src="{{pic}}"/></div>
+			</ion-slide>
+		</ion-slide-box>
+
+		<div class="content-inner">
+			<h4 class="align-right">{{vm.item.price | currency : vm.item.currency  : 2 }}</h4>
+			<p>{{vm.item.body}}</p>
+		</div>
+
+		<div class="padding">
+			<button class="button button-block button-positive" ng-click="vm.addToCart()">
+				<i class="icon ion-ios-cart"></i> Add to cart
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

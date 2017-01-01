@@ -1,0 +1,65 @@
+<ion-view >
+  <ion-nav-bar align-title="center" class="bar-white">
+    <ion-nav-back-button></ion-nav-back-button>
+    <ion-nav-title>
+      REGISTRATION
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-content style="background-color: #FFFFFF !important">
+
+<div class="list">
+      <form name="myForm" novalidate style="background-color: #FFFFFF !important">
+        <div class="list">
+            <label class="item item-input" style="background-color: #FFFFFF !important">
+                <span class="input-label"><h4>First Name</h4></span>
+                <input type="text"  ng-model="data.firstName" ng-minlength="1" required>
+            </label>
+            <label class="item item-input" style="background-color: #FFFFFF !important">
+                <span class="input-label"><h4>Last Name</h4></span>
+                <input type="text" ng-model="data.lastName" ng-minlength="1" required>
+            </label>
+        </div>
+
+          <div class="padding">
+            <p ng-show="myForm.firstName.$error.required">* Username is required</p>
+            <p ng-show="myForm.lastName.$error.required">* Password must be longer than 6 characters</p>
+        </div>
+
+        </form>
+
+  <ion-item  class="item-divider item-icon-left">
+          <i class="icon ion-ios-calendar-outline"></i>  <h4>Select dates and picking times</h4>
+ </ion-item>
+
+
+  <div class="item item-icon-right" style="background-color: #FFFFFF !important">
+      <ion-checkbox ng-model="isChecked"  ng-change="checkedOrNot(asset, isChecked, $index)" ng-init='isChecked=false' style="background-color: #FFFFFF !important"><h4 style="color:#1f7f5c;">Saturday, 03.06.2017</h4>
+      <p ng-show="selectedTime != undefined">will be picked at {{selectedTime.getUTCHours()}} : {{selectedTime.getUTCMinutes()}}</p>
+      </ion-checkbox>
+    <i class="icon ion-ios-stopwatch-outline custom-icon" ng-show="isChecked == true" ng-click="openTimePicker1()"></i>
+  </div>
+
+    <div class="item item-icon-right" style="background-color: #FFFFFF !important">
+      <ion-checkbox ng-model="isSecondChecked"  ng-change="checkedOrNotSecond(asset, isSecondChecked, $index)" ng-init='isSecondChecked=false'  style="background-color: #FFFFFF !important"><h4 style="color:#1f7f5c;">Sunday, 04.06.2017</h4>
+      <p ng-show="secondSelectedTime != undefined">will be picked at {{secondSelectedTime.getUTCHours()}} : {{secondSelectedTime.getUTCMinutes()}}</p>
+      </ion-checkbox>
+    <i class="icon ion-ios-stopwatch-outline custom-icon" ng-show="isSecondChecked == true" ng-click="openTimePicker2()"></i>
+  </div>
+
+
+  <label class="item item-input item-select padding" ng-show="isSecondChecked == true || isChecked == true " style="background-color: #FFFFFF !important">
+    <div class="input-label padding" >
+     <h4>Reminders in mins</h4>
+    </div>
+    <select ng-model="reminderSelected"  ng-options="reminder.id as reminder.name for reminder in reminders" ng-change="vm.onchange(reminders[reminderSelected])">
+    </select>
+  </label>
+
+   <div  style="background-color: #FFFFFF !important">
+      <button class="button button-block button-positive" ng-click="vm.add()">
+        <i class="icon ion-archive"></i> Register
+      </button>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+<ion-view title="Game" ng-controller="GameCtrl as vm">
+  <ion-content class="has-header" style="background-color: #FFFFFF !important">
+    <div class="card animated bounceInLeft">
+        
+        <div class="item item-divider item-stable">
+            Home Team
+        </div>
+
+        <a class="item item-text-wrap item-icon-right" style="background-color: #FFFFFF !important" ng-href="#/app/teams/{{vm.game.team1Id}}">
+           <font size="2", color="#1f7f5c"> {{vm.game.team1}}</font>
+            <i class="icon ion-chevron-right icon-accessory" style="color:#1f7f5c"></i>
+        </a>
+
+        <div class="item item-divider">
+            Goals: {{vm.game.team1Score}}
+        </div>
+    </div>
+
+    <div class="card animated bounceInRight">
+        <div class="item item-divider item-stable">
+            Away Team
+        </div>
+        <a class="item item-text-wrap item-icon-right" style="background-color: #FFFFFF !important" ng-href="#/app/teams/{{vm.game.team2Id}}">
+           <font size="2", color="#1f7f5c"> {{vm.game.team2}}</font>
+            <i class="icon ion-chevron-right icon-accessory" style="color:#1f7f5c"></i>
+        </a>
+        <div class="item item-divider">
+            Goals: {{vm.game.team2Score}}
+        </div>
+    </div>
+
+    <div class="card animated tada">
+        <div class="item item-divider item-stable">
+            Time/Location
+        </div>
+        <div class="item" style="background-color: #FFFFFF !important">
+            <font size="2", color="#1f7f5c">{{vm.game.time | date:'M/d/yy'}} {{vm.game.time | date:'shortTime'}}</font>
+        </div>
+        <div class="item item-button-right">
+           <font size="2", color="#1f7f5c">at :  {{vm.game.location}}</font>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

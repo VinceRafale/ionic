@@ -1,0 +1,76 @@
+{
+"id": 1,
+"jsonrpc": "2.0",
+"total": 6,
+"result": [
+{
+"id": 1,
+"guid": "1d4aa3b2-c059-4fa7-a751-9bca735e4ebb",
+"thumb": "img/chivas-regal.jpeg",
+"title": "VIP Gold",
+"body": "Free entry for two people, a whisky and sodas",
+"tags": [
+"VIP",
+"Silber"
+],
+"url": "http://demo.morethanthemes.com/retailplus/commerce-default/node/9",
+"currency": "€",
+"price": "130.00",
+"pictures": [
+"img/chivas-regal.jpeg"
+]
+},
+{
+"id": 2,
+"guid": "6630fb89-94d6-4fec-a1c3-c48d80b88895",
+"thumb": "img/moet.jpg",
+"title": "VIP Silver",
+"body": "Free entry for two people, a champagne and sodas",
+"tags": [
+"VIP",
+"Silber Plus"
+],
+"url": "http://demo.morethanthemes.com/retailplus/commerce-default/node/10",
+"currency": "€",
+"price": "145.00",
+"pictures": [
+"img/moet.jpg"
+]
+},
+{
+"id": 3,
+"guid": "861d3f45-28ce-4b10-80e5-e98fafee4d4f",
+"thumb": "img/cristal.jpg",
+"title": "VIP Bronze",
+"body": "Free entry for four people, two whisky and sodas",
+"tags": [
+"VIP",
+"Gold",
+"vegetables"
+],
+"url": "http://demo.morethanthemes.com/retailplus/commerce-default/node/11",
+"currency": "€",
+"price": "250.00",
+"pictures": [
+"img/cristal.jpg"
+]
+},
+{
+"id": 4,
+"guid": "205f2dd0-35e8-450c-9577-bb71be487fe7",
+"thumb": "img/chandon.jpg",
+"title": "VIP Gold Plus",
+"body": "Free entry for four people, a champagne, a bottle of whisky and sodas",
+"tags": [
+"VIP",
+"Gold Plus"
+],
+"url": "http://demo.morethanthemes.com/retailplus/commerce-default/node/12",
+"currency": "€",
+"price": "275.00",
+"pictures": [
+"img/chandon.jpg"
+]
+}
+]
+}

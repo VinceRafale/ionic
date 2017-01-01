@@ -1,0 +1,29 @@
+
+<ion-view title="Sport" ng-controller="LeaguesCtrl as vm">
+
+<ion-nav-bar class="bar-white">
+    <ion-nav-buttons side="left">
+   <a class="button button-clear ion-chevron-left" ui-sref="challenge" ></a>
+</ion-nav-buttons>
+</ion-nav-bar>
+  <ion-content class="has-header" style="background-color: #FFFFFF !important">
+
+  <div class="item item-image">
+    <img src="img/football.jpg">    
+  </div>
+  <div class="item item-body" style="background-color: #FFFFFF !important">
+    <p align="justify" >
+    Follow your favourite teams!!!
+    Locations, standings, and Teams are one finger-tip away. 
+    </p>
+  </div>
+</div>
+    <div class="list">
+        <a class="positive chat-item.ng-enter-stagger chat-item.ng-enter item item-icon-left item-icon-right" ng-repeat="league in vm.leagues" ng-click="vm.selectLeague(league.id)" style="background-color: #FFFFFF !important">
+            <font size="2">{{league.name}}</font>
+            <i ng-class="vm.getIconForLeagueId(league.id)"></i>
+            <i class="icon ion-chevron-right icon-accessory "></i>
+        </a>
+    </div>
+  </ion-content>
+</ion-view>

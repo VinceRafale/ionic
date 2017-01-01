@@ -1,0 +1,13 @@
+<ion-view >
+<ion-nav-bar>
+  <ion-nav-buttons side="left">
+   <a class="button button-clear ion-chevron-left" ui-sref="challenge" ></a></ion-nav-buttons> 
+    <ion-nav-title>
+<div class="clear-button-bar padding">
+   <a class="clear-button clear-button-first clear-button-active"  ng-class="{'clear-button-active' : isActive('Schedule')}" ng-click="setActive('Schedule')" ui-sref="bsf.calendar" ui-sref-active="current">Calendar</a>
+   <a class="clear-button clear-button-last" ng-class="{'clear-button-active' : isActive('Speakers')}" ng-click="setActive('Speakers')" ui-sref="bsf.speakers" ui-sref-active="current">Speakers</a>
+</div>
+    </ion-nav-title>
+  </ion-nav-bar>
+<ion-nav-view  name="insights-tab"></ion-nav-view>
+</ion-view>

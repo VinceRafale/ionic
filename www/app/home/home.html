@@ -1,0 +1,72 @@
+<ion-view class="playstore" ion-cover-header="120">
+
+  <!-- regular ionic header bar -->
+  <ion-header-bar class="playstore-header">
+    <h2 class="title">The 25th Edition</h2>
+    <div class="buttons">
+      <a class="button button-icon ion-android-more-vertical" ng-click="myAcSheet()"></a>
+    </div>
+  </ion-header-bar>
+
+  <ion-content style="background-color: #FFFFFF !important">
+    <div class="home-hello">
+      <img src="img/mindif.jpg"/>
+  <a class="item item-avatar" href="#">
+      <img src="img/challenge-camerounais.png">
+       <h3><b>Challenge Camerounais</b></h3>
+      <h4>3.-4. JUNE 2017, in Stuttgart</h4>
+    </a>
+    </div>
+
+
+
+
+<div ng-repeat="e in vm.entries" ng-if="$index%2==0" class="row">
+
+            <div class="card col home">
+                <a class="item item-text-wrap" style="background-color: #FFFFFF !important" ui-sref="{{vm.entries[$index].path}}">
+                    <h1><i class="icon {{vm.entries[$index].icon}} custom-icon"></i></h1>
+                    <h4>{{vm.entries[$index].title}}</h4>
+                </a>
+            </div>
+
+            <div class="card col home">
+                <a class="item item-text-wrap custom-border" style="background-color: #FFFFFF !important" ui-sref="{{vm.entries[$index + 1].path}}">
+                    <h1><i class="icon {{vm.entries[$index + 1].icon}} custom-icon"></i></h1>
+                    <h4>{{vm.entries[$index + 1].title}}</h4>
+                </a>
+            </div>
+
+</div>
+
+    <div class="list card">
+             <a ng-click="vm.openTwitterPage()" class="item item-icon-left" style="background-color: #FFFFFF !important">
+                <i class="icon ion-social-twitter-outline "></i>
+                <h4>Visit us on Twitter</h4>
+            </a>
+            <a ng-click="vm.openFacebookPage()" class="item item-icon-left" style="background-color: #FFFFFF !important">
+                <i class="icon ion-social-facebook-outline "></i>
+                <h4>Visit us on Facebook</h4>
+            </a>
+            <a href="#" class="item item-icon-left" ng-click="vm.getDirections() " style="background-color: #FFFFFF !important">
+                <i class="icon ion-ios-location-outline"></i>
+                <h4>Find challenge village</h4>
+            </a>
+
+          <a class="item item-icon-left" ui-sref="feedback" style="background-color: #FFFFFF !important">
+        <i class="icon ion-ios-email-outline"></i>
+       <h4> Send us your feedback</h4>
+      </a>
+            <a ng-click="vm.rateThisAppNow()" class="item item-icon-left" style="background-color: #FFFFFF !important">
+        <i class="icon ion-ios-star-outline"></i>
+        <h4>Take a moment to rate our app</h4>
+      </a>
+        </div>
+
+  </ion-content>
+
+
+</ion-view>
+
+
+

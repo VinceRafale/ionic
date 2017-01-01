@@ -1,0 +1,85 @@
+ <ion-view view-title="Stay tuned">
+ 
+<ion-nav-bar class="bar-white">
+    <ion-nav-buttons side="left">
+   <a class="button button-clear ion-chevron-left" ui-sref="home.schedule" > </a>
+</ion-nav-buttons>
+</ion-nav-bar>
+
+ <ion-content  style="background-color: #FFFFFF !important">
+
+
+<ion-item class="item item-thumbnail-left item-text-wrap" menu-close ng-click="vm.addImage()" style="background-color: #FFFFFF !important">  
+              <img ng-src= "{{image}}" >                
+              <p><h3>Hi Serge </h3></p> 
+              <p >The challenge does not last for 2 days! Tell us your preferences and we'll keep you posted all the time</p>
+              
+</ion-item>
+       
+
+<div class="padding">
+      <button class="button button-block button-positive" ng-click="vm.logout()">
+         Log out
+      </button>
+</div>
+  <ion-item  class="item-divider item-icon-left">
+          <i class="icon ion-ios-gear-outline"></i>  <h4> Your preferences</h4>
+ </ion-item>
+
+<ion-list>
+
+
+<div ng-repeat="group in groups">
+<ion-item class="item-stable item-icon-right"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}" style="background-color: #FFFFFF !important">
+<i class="icon" ng-class="isGroupShown(group) ? 'ion-ios-arrow-up' : 'ion-ios-arrow-down'"></i>
+            &nbsp;
+            {{group.name}}
+</ion-item>
+          
+<ion-item class="item-accordion item-toggle"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+     {{item}}
+<label class="toggle">
+<input type="checkbox">
+
+<div class="track ">
+<div class="handle"></div>
+       </div>
+     </label>
+</li>
+</ion-item>
+</div>
+</ion-list>
+
+<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm" style="background-color: #FFFFFF !important">Become a partner</ion-toggle>
+
+<ion-toggle ng-model="airplaneMode" toggle-class="toggle-calm" style="background-color: #FFFFFF !important">Engage with the challenge</ion-toggle>
+
+  <ion-item  class="item-divider item-icon-left">
+          <i class="icon ion-ios-settings"></i>  <h4> Your settings</h4>
+ </ion-item>
+
+  <div class="list card" style="background-color: #FFFFFF !important">
+    <a ui-sref="email" class="item item-icon-left" style="background-color: #FFFFFF !important">
+      <i class="icon ion-email custom-icon"></i>
+      Change your email
+    </a>
+
+   <a ui-sref="phone" class="item item-icon-left" style="background-color: #FFFFFF !important">
+      <i class="icon custom-icon ion-ios-telephone"></i>
+      Change your phone
+    </a>
+
+    <a ui-sref="password" class="item item-icon-left" style="background-color: #FFFFFF !important">
+      <i class="icon custom-icon ion-lock-combination"></i>
+      Change your password
+    </a>
+
+  </div>
+</ion-content>
+</ion-view>
+
+
